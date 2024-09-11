@@ -5,14 +5,14 @@ try {
   };
 
 const express = require('express');
-const mysql = require('mysql9/promise');
+const mysql = require('mysql2');
 const userPassword = process.env.DB_PASSWORD
 
 const app = express();
 
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'John',
+    user: 'root',
     password: userPassword,
     database: 'acme'
 
@@ -29,5 +29,5 @@ app.get('/users', (req, res) => {
     });
 });
 
-app.listen(500, () => console.log('Server Started'));
+app.listen(5000, () => console.log('Server Started'));
 
